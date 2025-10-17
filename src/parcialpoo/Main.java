@@ -14,16 +14,18 @@ public class Main {
             System.out.println("2. Validador de edad");
             System.out.println("3. Validador de número perfecto");
             System.out.println("4. Validador de palíndromo");
+            System.out.println("5. Validador de número capicúa");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
-            sc.nextLine(); //
+            sc.nextLine(); // limpiar buffer
 
             switch (opcion) {
                 case 1 -> ZodiacoApp.main(null);
                 case 2 -> ValidadorEdad.main(null);
                 case 3 -> ValidadorNumeroPerfecto.main(null);
                 case 4 -> ValidadorPalindromo.main(null);
+                case 5 -> ValidadorCapicua.main(null);
                 case 0 -> System.out.println("Saliendo...");
                 default -> System.out.println("Opción inválida.");
             }
