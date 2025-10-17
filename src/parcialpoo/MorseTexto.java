@@ -6,9 +6,9 @@ public class MorseTexto {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
 
-        System.out.println("Digite su texto en código Morse para traducirlo a texto:");
         System.out.println("(Use un espacio entre letras y tres espacios entre palabras)");
         System.out.println("Ejemplo: .... --- .-.. .-   -- ..- -. -.. ---");
+        System.out.println("Digite su texto en código Morse para traducirlo a texto:");
 
         String entrada = leer.nextLine();
 
