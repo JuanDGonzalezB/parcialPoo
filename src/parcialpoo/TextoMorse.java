@@ -9,7 +9,15 @@ public class TextoMorse {
         System.out.println("Ingrese un texto para traducirlo a morse: ");
         String entrada = leer.nextLine();
 
+        if (entrada.trim().isEmpty()) {
+            System.out.println("No ingresó ningún texto. Intente nuevamente.");
+            return;
+        }
+
         entrada = entrada.toUpperCase();
+
+        entrada = entrada.replaceAll("[^A-Z0-9 ]", "");
+
         String[] palabras = entrada.split(" ");
         String textoMorse = "";
 
@@ -25,31 +33,33 @@ public class TextoMorse {
                 System.out.println("Letra: (" + letra + "), a Morse: " + codigoMorse);
             }
 
-            // Espacio doble entre palabras
-            textoMorse = textoMorse + "  ";
+            textoMorse = textoMorse + "   ";
         }
 
         System.out.println("El texto ingresado traducido a Morse es: " + textoMorse);
     }
 
     public static String buscarMorse(char letra) {
-        char[] simbolos = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-                'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-                'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+        char[] letras = {
+                'A','B','C','D','E','F','G','H','I',
+                'J','K','L','M','N','O','P','Q','R',
+                'S','T','U','V','W','X','Y','Z',
+                '0','1','2','3','4','5','6','7','8','9'
+        };
 
-        String[] morse = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
-                ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",
-                "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..",
-                "-----", ".----", "..---", "...--", "....-", ".....",
-                "-....", "--...", "---..", "----."};
+        String[] morse = {
+                ".-","-...","-.-.","-..",".","..-.","--.","....","..",
+                ".---","-.-",".-..","--","-.","---",".--.","--.-",".-.",
+                "...","-","..-","...-",".--","-..-","-.--","--..",
+                "-----",".----","..---","...--","....-",".....","-....","--...","---..","----."
+        };
 
-        for (int i = 0; i < simbolos.length; i++) {
-            if (letra == simbolos[i]) {
+        for (int i = 0; i < letras.length; i++) {
+            if (letra == letras[i]) {
                 return morse[i];
             }
         }
 
-        return "?"; // Si no lo encuentra
+        return "";
     }
 }
