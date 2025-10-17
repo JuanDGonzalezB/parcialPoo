@@ -3,6 +3,8 @@ package parcialpoo;
 import parcialpoo.zodiacoapp.ZodiacoApp;
 import java.util.Scanner;
 import parcialpoo.caballeros.MainCaballeros;
+import parcialpoo.juego.MainJuego;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +21,7 @@ public class Main {
             System.out.println("6. Conversor de Morse a Texto");
             System.out.println("7. Conversor de Texto a Morse");
             System.out.println("8. Gestor caballeros");
+            System.out.println("9. Juego");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
@@ -32,7 +35,8 @@ public class Main {
                 case 5 -> ValidadorCapicua.main(null);
                 case 6 -> MorseTexto.main(null);
                 case 7 -> TextoMorse.main(null);
-                 case 8 -> MainCaballeros.main(null);
+                case 8 -> MainCaballeros.main(null);
+                case 9 -> MainJuego.main(null);
                 case 0 -> System.out.println("Saliendo del programa...");
                 default -> System.out.println("Opción inválida, intente de nuevo.");
             }
