@@ -12,14 +12,26 @@ public class ValidadorEdad {
         int añoNacimiento = leer.nextInt();
         int mesNacimiento = leer.nextInt();
 
+        if (mesActual < 1 || mesActual > 12 || mesNacimiento < 1 || mesNacimiento > 12) {
+            System.out.println("Error: El mes debe estar entre 1 y 12.");
+            return;
+        }
+        if (añoNacimiento > añoActual ||
+                (añoNacimiento == añoActual && mesNacimiento > mesActual)) {
+            System.out.println("Error: La fecha de nacimiento no puede ser futura.");
+            return;
+        }
         int  edad = añoActual - añoNacimiento;
+
         if(mesActual < mesNacimiento){
             edad = edad - 1;
         }
         int mes = mesActual - mesNacimiento;
+
         if(mes < 0){
             mes = mes + 12;
         }
+
         System.out.println("Usted tiene: "+edad+" años y "+mes+" meses. ");
         if(edad>=18){
             System.out.println("Usted es mayor de edad");
