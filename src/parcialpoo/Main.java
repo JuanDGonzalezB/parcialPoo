@@ -17,7 +17,7 @@ public class Main {
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
-            sc.nextLine(); // limpiar buffer
+            sc.nextLine(); //
 
             switch (opcion) {
                 case 1 -> ZodiacoApp.main(null);
